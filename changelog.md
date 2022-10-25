@@ -7,6 +7,7 @@
 - Improve the `eds.history` component by taking into account the date extracted from `eds.dates` component.
 - New pop up when you click on the copy icon in the termynal widget (docs).
 - New RegexMatcher method to create spans from groupdicts
+- New `eds.dates` option to disable time detection
 
 ### Changed
 
@@ -24,7 +25,7 @@
 
 - Add new patterns (footer, web entities, biology tables, coding sections) to pipeline normalisation (pollution)
 
-## Changed
+### Changed
 
 - Improved TNM detection algorithm
 - Account for more modifiers in ADICAP codes detection

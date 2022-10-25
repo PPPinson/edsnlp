@@ -6,6 +6,11 @@
 
 - Improve the `eds.history` component by taking into account the date extracted from `eds.dates` component.
 - New pop up when you click on the copy icon in the termynal widget (docs).
+- New RegexMatcher method to create spans from groupdicts
+
+### Changed
+
+- Improve date detection by removing false positives
 
 ### Fixed
 

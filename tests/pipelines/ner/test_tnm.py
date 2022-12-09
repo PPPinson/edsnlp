@@ -12,6 +12,7 @@ examples = [
     "TNM: <ent norm=pT1mN1M0>pT1(m)N1 M0</ent>",
     "TNM: <ent norm=pT1bN0sn>pT1bN0(sn)</ent>",
     "TNM: <ent norm=pT1N1M0>pT1 pN1 M0</ent>",
+    "TNM: <ent norm=TxN1M0>TxN1M0</ent>",
 ]
 
 

@@ -1,4 +1,4 @@
-prefix_pattern = r"(?P<prefix>[cpPyraum]p?)"
+prefix_pattern = r"(?P<prefix>[cpPyraum]p?)?"
 tumour_pattern = r"T\s?(?P<tumour>([0-4o]|is))?(?P<tumour_specification>[abcdx]|mi)?"
 tumour_pattern += r"(?:\((?P<tumour_suffix>[^()]{1,10})\))?"
 node_pattern = r"(\s*\/?\s*([cpPyraum]p?)?\s*N\s?(?P<node>[0-3o]|x)"

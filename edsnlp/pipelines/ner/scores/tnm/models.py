@@ -88,6 +88,7 @@ class TNM(BaseModel):
     node_suffix: Optional[str] = None
     pleura: Optional[Pleura] = None
     metastasis: Optional[Metastasis] = None
+    metastasis_specification: Optional[Specification] = None
     resection_completeness: Optional[int] = None
     version: Optional[str] = None
     version_year: Optional[int] = None
@@ -137,8 +138,11 @@ class TNM(BaseModel):
         if self.pleura is not None:
             norm.append(f"PL{self.pleura}")
 
-        if self.metastasis is not None:
-            norm.append(f"M{self.metastasis}")
+        if ((self.metastasis is not None)
+            | (self.metastasis_specification is not None)
+           ):
+            norm.append(f"M{str(self.metastasis or '')}")
+            norm.append(f"{str(self.metastasis_specification or '')}")
 
         if self.resection_completeness is not None:
             norm.append(f"R{self.resection_completeness}")
@@ -191,6 +195,7 @@ class TNM(BaseModel):
                 "node",
                 "pleura",
                 "metastasis",
+                "metastasis_specification"
                 "tumour_specification",
                 "node_specification",
                 "tumour_suffix",

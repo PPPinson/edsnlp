@@ -14,7 +14,10 @@ node_pattern = (
     r"(?:\((?P<node_suffix>[^()]{1,10})\))?" #get parenthesis content after p
 )
 
-metastasis_pattern = r"M\s?(?P<metastasis>([01o]|x))x?"
+metastasis_pattern = (
+    r"M\s?(?P<metastasis>([01o]|x))x?"
+    r"(?P<metastasis_specification>[abcdx])?" #get letter after Nx
+)
 pleura_pattern = r"PL\s?(?P<pleura>([0123]|x))" #For lung cancer 
 resection_completeness = r"R\s?(?P<resection_completeness>[012])"
 

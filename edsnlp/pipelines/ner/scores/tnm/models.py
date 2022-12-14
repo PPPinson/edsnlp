@@ -68,6 +68,13 @@ class Metastasis(TnmEnum):
     score_1x = "1x"
     score_2x = "2x"
     ox = "ox"
+    
+class Pleura(TnmEnum):
+    unknown = "x"
+    score_0 = "0"
+    score_1 = "1"
+    score_2 = "2"
+    score_3 = "3"
 
 
 class TNM(BaseModel):
@@ -79,6 +86,7 @@ class TNM(BaseModel):
     node: Optional[Node] = None
     node_specification: Optional[Specification] = None
     node_suffix: Optional[str] = None
+    pleura: Optional[Pleura] = None
     metastasis: Optional[Metastasis] = None
     resection_completeness: Optional[int] = None
     version: Optional[str] = None
@@ -125,6 +133,9 @@ class TNM(BaseModel):
             norm.append(f"N{str(self.node or '')}")
             norm.append(f"{str(self.node_specification or '')}")
             norm.append(f"{str(self.node_suffix or '')}")
+        
+        if self.pleura is not None:
+            norm.append(f"PL{self.pleura}")
 
         if self.metastasis is not None:
             norm.append(f"M{self.metastasis}")
@@ -178,6 +189,7 @@ class TNM(BaseModel):
                 "prefix",
                 "tumour",
                 "node",
+                "pleura",
                 "metastasis",
                 "tumour_specification",
                 "node_specification",

@@ -44,7 +44,7 @@ class TNM(BaseComponent):
         if isinstance(pattern, str):
             pattern = [pattern]
 
-        self.regex_matcher = RegexMatcher(attr=attr, alignment_mode="strict")
+        self.regex_matcher = RegexMatcher(attr=attr, alignment_mode="expand")
         self.regex_matcher.add("tnm", pattern)
 
         self.set_extensions()

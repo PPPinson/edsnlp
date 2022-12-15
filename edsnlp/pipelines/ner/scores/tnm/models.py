@@ -195,7 +195,7 @@ class TNM(BaseModel):
                 "node",
                 "pleura",
                 "metastasis",
-                "metastasis_specification"
+                "metastasis_specification",
                 "tumour_specification",
                 "node_specification",
                 "tumour_suffix",
